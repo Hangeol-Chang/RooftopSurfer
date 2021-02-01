@@ -17,7 +17,7 @@ public class BuildingSummoner : MonoBehaviour
         do
         {
             buildingnum = Random.Range(0, 7);
-        } while (buildingprefabs[buildingnum].transform.position.x > -14);
+        } while (buildingprefabs[buildingnum].activeSelf == true);
 
         cansummon = false;
 

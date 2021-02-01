@@ -31,7 +31,8 @@ public class PlayerBehaviour : MonoBehaviour
     }
     void ropeshoot()
     {
-        Hook.SetActive(true);
+        gameObject.GetComponent<Hookcontroller>().movetype = 1;
+        canrope = false;
     }
     void ropecatch()
     {
