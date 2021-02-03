@@ -5,7 +5,13 @@ using UnityEngine;
 public class Hookbehaviour : MonoBehaviour
 {
 
-    // Start is called before the first frame update
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag.Contains("pillar"))
+        {
+            GetComponentInParent<Hookcontroller>().movetype = 4;
+        }
+    }
     void Start()
     {
 
@@ -21,7 +27,10 @@ public class Hookbehaviour : MonoBehaviour
         if (GetComponentInParent<Hookcontroller>().movetype == 1)
         {
             this.transform.Translate(0.01f, 0.01f, 0);
-        }else if (GetComponentInParent<Hookcontroller>().movetype == 1)
+        }else if (GetComponentInParent<Hookcontroller>().movetype == 2)
+        {
+            this.transform.Translate(0, 0, 0);
+        }else if (GetComponentInParent<Hookcontroller>().movetype == 3)
         {
 
         }
